@@ -57,7 +57,7 @@ export default new Config().merge({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './src/index.html',
       inject: "body"
     }),
     new webpack.LoaderOptionsPlugin({ options: { postcss: [precss, autoprefixer] } })
