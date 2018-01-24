@@ -1,4 +1,4 @@
-import * as types from '../constants/ActionTypes';
+import * as types from '../../constants/ActionTypes';
 
 let nextUserId = 0
 export function signUser(login, name, secondName, Email, password){

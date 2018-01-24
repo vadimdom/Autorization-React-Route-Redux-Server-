@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { Router, Route, BrowserRouter, Switch, browserHistory } from 'react-router-dom';
-import App from './components/pages/App/App.jsx';
-import AuthorizationPage from './components/pages/AuthorizationPage/AuthorizationPage.jsx';
-import SignUpPage from './components/pages/SignUpPage/SignUpPage.jsx';
-import ProfilePage from './components/pages/ProfilePage/ProfilePage.jsx';
+import App from '../pages/App/App.jsx';
+import AuthorizationPage from '../pages/AuthorizationPage/AuthorizationPage.jsx';
+import SignUpPage from '../pages/SignUpPage/SignUpPage.jsx';
+import ProfilePage from '../pages/ProfilePage/ProfilePage.jsx';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as Actions from './components/common/action.js';
+import * as Actions from '../../Redux/modules/action.js';
 
 //import './App.less';
 

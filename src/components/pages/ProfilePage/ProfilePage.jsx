@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import store from '../../../store.js';
+import store from '../../../Redux/store.js';
 import { getState } from 'redux';
 
 //import './ProfilePage.less';

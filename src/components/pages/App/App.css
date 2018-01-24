@@ -1,53 +1,46 @@
-@import "../../../styles/palette.less";
-
-// global styles
 body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-// app styles
 .App {
-    background-color: @card-background-color;
-    // background-color: #FFFFFF;
+    background-color: #FFFFFF;
     width: 100vw;
     min-height: 100vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-
-    .menu-bar {
+}
+    
+.App .menu-bar {
         display: flex;
-        background-color: @primary-color;
-        // background-color: #5DDB72;
+        background-color: #5DDB72;
         height: 50px;
         padding-top: 12px;
         padding-bottom: 12px;
         box-sizing: border-box;
     }
 
-    .menu-item {
+.App  .menu-item {
         padding-left: 16px;
         padding-right: 16px;
     }
 
-    .menu-item-link {
+.App .menu-item-link {
         font-size: 17px;
         font-weight: bold;
-       color: @contrast-text-color;
-        // color: rgba(226, 116, 116, 0.9);
+        color: rgba(226, 116, 116, 0.9);
         text-transform: uppercase;
         text-decoration: none;
     }
 
-    .content {
+.App .content {
         height: 100%;
     }
 
-    button{
+.App button {
         margin-left: 10px;
         color: #095C5F;
         background-color: #6DA86D;
     }
-}

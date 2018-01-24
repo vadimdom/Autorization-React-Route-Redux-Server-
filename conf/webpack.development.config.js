@@ -12,7 +12,8 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
+    loaders: [
+      {
       test: /\.css$/,
       use: [
         'style-loader',
@@ -27,7 +28,8 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
         },
         { loader: 'postcss-loader' },
       ]
-    }]
+    }
+  ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

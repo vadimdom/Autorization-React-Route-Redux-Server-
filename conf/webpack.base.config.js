@@ -6,10 +6,8 @@ import precss from 'precss';
 
 export default new Config().merge({
   entry: './src/main.js',
-  //entry: './public/index.html',
   output: {
         path: __dirname + '/../public/build/',
-        // publicPath: "build/",
         filename: "bundle.js"
     },
   module: {

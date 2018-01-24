@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import store from '../../../store.js';
+import store from '../../../Redux/store.js';
 import { getState } from 'redux';
 
-//import './App.less';
+// import './App.less';
+// import './App.css';
 
 
 class App extends React.Component{
