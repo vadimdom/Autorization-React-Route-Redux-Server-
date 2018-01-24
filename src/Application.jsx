@@ -1,0 +1,43 @@
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router-dom';
+import { Router, Route, BrowserRouter, Switch, browserHistory } from 'react-router-dom';
+import App from './components/pages/App/App.jsx';
+import AuthorizationPage from './components/pages/AuthorizationPage/AuthorizationPage.jsx';
+import SignUpPage from './components/pages/SignUpPage/SignUpPage.jsx';
+import ProfilePage from './components/pages/ProfilePage/ProfilePage.jsx';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as Actions from './components/common/action.js';
+
+//import './App.less';
+
+@connect(state => ({
+    users: state.users
+  }))
+
+class Application extends Component {
+
+    render() {
+        const { dispatch } = this.props;
+        const actions = bindActionCreators(Actions, dispatch);
+
+        return (
+            <BrowserRouter>
+                        <App signOutUser={actions.signOutUser}>
+                            <Route path='/auth' render={()=><AuthorizationPage authUser={actions.authUser}/>} />
+                            <Route path='/sign' render={()=><SignUpPage signUser={actions.signUser}/>} />
+                            <Route path='/profile' render={()=>
+                                <ProfilePage 
+                                    changeUserName={actions.changeUserName}
+                                    changeUserSecondName={actions.changeUserSecondName}
+                                    changeUserEmail={actions.changeUserEmail}
+                                    changeUserLogin={actions.changeUserLogin}
+                                    changeUserPassword={actions.changeUserPassword}
+                                />} />
+                        </App>
+            </BrowserRouter>
+        );
+    }
+}
+
+export default Application;
