@@ -5,8 +5,8 @@ import promise from 'redux-promise-middleware';
 import rootReducer from './modules/rootReducer.js';
 
 const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(promise(), thunk))
-    );
+  rootReducer,
+  composeWithDevTools(applyMiddleware(promise(), thunk))
+);
 
-    export default store;
+export default store;

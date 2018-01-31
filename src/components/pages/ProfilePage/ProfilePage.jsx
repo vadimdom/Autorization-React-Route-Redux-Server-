@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import store from '../../../Redux/store.js';
 import { getState } from 'redux';
 
-//import './ProfilePage.less';
+import './ProfilePage.less';
 
 class ProfilePage extends React.Component{
+
     constructor(props){
         super(props);
         this.state = {

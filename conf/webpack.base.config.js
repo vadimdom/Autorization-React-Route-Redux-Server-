@@ -8,28 +8,51 @@ export default new Config().merge({
   entry: './src/main.js',
   output: {
         path: __dirname + '/../public/build/',
+        publicPath:'',
         filename: "bundle.js"
     },
   module: {
-    loaders: [
+    rules: [
       {
         test: /.jsx?$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
+    //   {
+    //     test: /.js?$/,
+    //     loader: 'babel-loader',
+    //     exclude: /node_modules/,
+    //   },
             // {
             //     test: /\.jsx?$/,
             //     loader: "eslint-loader",
             //     exclude: [/node_modules/, /public/]
             // },
+            // {
+            //     test: /\.css$/,
+            //     loader: 'style-loader!css-loader!autoprefixer-loader',
+            //     exclude: [/node_modules/, /public/]
+            // },
+            // {
+            //     test: /\.less$/,
+            //     // loader: 'style-loader!css-loader!autoprefixer-loader!less-loader',
+
+            //     use: [
+            //       'style-loader',
+            //       { loader: 'css-loader' },
+            //       { loader: 'autoprefixer-loader' },
+            //       { loader: 'less-loader' },
+            //     ],
+
+            //     exclude: [/node_modules/, /public/]
+            // },
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader!autoprefixer-loader',
-                exclude: [/node_modules/, /public/]
-            },
-            {
-                test: /\.less$/,
-                loader: 'style-loader!css-loader!autoprefixer-loader!less-loader',
+                test: /\.(less|css)$/,
+                use: [
+                  'style-loader',
+                  { loader: 'css-loader', options: { importLoaders: 1, minimize: true } },
+                  'less-loader',
+                ],
                 exclude: [/node_modules/, /public/]
             },
             {
@@ -51,7 +74,7 @@ export default new Config().merge({
            
             {
                 test: /\.json$/,
-                loader: 'json-loader'
+                use: 'json-loader'
             }
     ]
   },

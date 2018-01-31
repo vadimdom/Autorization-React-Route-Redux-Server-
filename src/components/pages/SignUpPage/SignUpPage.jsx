@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import store from '../../../Redux/store.js';
 import { getState } from 'redux';
 
-//import './SignUpPage.less';
+import './SignUpPage.less';
 
 
 class SignUpPage extends Component{
@@ -74,7 +74,7 @@ class SignUpPage extends Component{
 
     renderAuthorized() {
         return (
-                <div className='InboxPage'>
+                <div className='SignUpPage'>
                     <h2 className='title'>
                         You are autorized!
                     </h2>
@@ -84,7 +84,7 @@ class SignUpPage extends Component{
 
     renderNotAuthorized() {
         return (
-                <div className='InboxPage'>
+                <div className='SignUpPage'>
                     <h2 className='title'>
                         Please enter your registration data:
                     </h2>

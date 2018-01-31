@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import store from '../../../Redux/store.js';
 import { getState } from 'redux';
 
-// import './App.less';
-// import './App.css';
+import './App.less';
 
 
 class App extends React.Component{
+
     constructor(props){
         super(props);
         

@@ -1,3 +1,13 @@
+var MongoClient = require('mongodb').MongoClient;
+
+var uri = "mongodb+srv://vadim_dom:qwerty1_@cluster0-vkgt5.mongodb.net/test";
+MongoClient.connect(uri, function(err, db) {
+  // Paste the following examples here
+  
+  db.close();
+});
+
+
 const express = require('express');
 const path = require('path');
 

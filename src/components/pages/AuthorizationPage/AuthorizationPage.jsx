@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import store from '../../../Redux/store.js';
 import { getState } from 'redux';
 
-//import './AuthorizationPage.less';
+import './AuthorizationPage.less';
 
 class AuthorizationPage extends React.Component{
+
     constructor(props){
         super(props);
         this.state = {
@@ -39,7 +40,7 @@ class AuthorizationPage extends React.Component{
 
     renderAuthorized() {
         return (
-            <div className='AboutPage'>
+            <div className='AutorizationPage'>
                 <h2 className='title'>
                     You are autorized!
                 </h2>
@@ -49,7 +50,7 @@ class AuthorizationPage extends React.Component{
 
     renderNotAuthorized() {
         return (
-                <div className='AboutPage'>
+                <div className='AutorizationPage'>
                     <h2 className='title'>
                         Please enter your login and password:
                     </h2>

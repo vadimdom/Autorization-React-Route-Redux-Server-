@@ -9,28 +9,22 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
   ],
   devtool: 'inline-source-map',
   output: {
+    publicPath:'',
     filename: 'bundle.js'
   },
-  module: {
-    loaders: [
-      {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: "[local]__[hash:base64:5]",
-            minimize: false
-          }
-        },
-        { loader: 'postcss-loader' },
-      ]
-    }
-  ]
-  },
+  // module: {
+  //   rules: [
+  //     {
+  //     test: /\.(less|css)$/,
+  //     use: [
+  //       'style-loader',
+  //       { loader: 'css-loader', options: { importLoaders: 1, minimize: true } },
+  //       'less-loader',
+  //     ],
+  //     exclude: [/node_modules/, /public/]
+  //   }
+  // ]
+  // },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ]
