@@ -3,10 +3,9 @@
 // var uri = "mongodb+srv://vadim_dom:qwerty1_@cluster0-vkgt5.mongodb.net/test";
 // MongoClient.connect(uri, function(err, db) {
 //   // Paste the following examples here
-  
+
 //   db.close();
 // });
-
 
 const express = require('express');
 const path = require('path');
@@ -24,18 +23,18 @@ if (isDevelopment) {
   app.use(require('webpack-dev-middleware')(compiler, {
     hot: true,
     stats: {
-      colors: true
-    }
+      colors: true,
+    },
   }));
   app.use(require('webpack-hot-middleware')(compiler));
 } else {
   app.use(express.static(PUBLIC_PATH));
 }
 
-app.all("*", function(req, res) {
+app.all('*', (req, res) => {
   res.sendFile(path.resolve(PUBLIC_PATH, 'index.html'));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, () => {
   console.log('Listening on port ' + PORT + '...');
 });
