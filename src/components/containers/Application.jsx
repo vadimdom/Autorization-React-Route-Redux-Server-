@@ -9,7 +9,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../../Redux/modules/action.js';
 
-//import './App.less';
 
 @connect(state => ({
     users: state.users

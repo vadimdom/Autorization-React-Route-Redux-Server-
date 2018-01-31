@@ -2,7 +2,7 @@
   "name": "my-project",
   "version": "1.0.0",
   "description": "This is express project",
-  "main": "server.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "set NODE_ENV=development&& babel-node server.js",

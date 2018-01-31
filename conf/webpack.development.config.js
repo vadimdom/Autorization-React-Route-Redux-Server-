@@ -12,19 +12,6 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
     publicPath:'',
     filename: 'bundle.js'
   },
-  // module: {
-  //   rules: [
-  //     {
-  //     test: /\.(less|css)$/,
-  //     use: [
-  //       'style-loader',
-  //       { loader: 'css-loader', options: { importLoaders: 1, minimize: true } },
-  //       'less-loader',
-  //     ],
-  //     exclude: [/node_modules/, /public/]
-  //   }
-  // ]
-  // },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ]
