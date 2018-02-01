@@ -20,47 +20,59 @@ class App extends React.Component {
 
   renderAuthorized(user) {
     return (
-      <div className="App">
-        <div className="menu-bar">
-          <div className="menu-item">
-            <Link className="menu-item-link" to="/auth">Autorization</Link>
+      <div className="main">
+        <header>
+          <div className="navigation">
+            <ul>
+              {/* <li>
+                <Link to="/auth">Autorization</Link>
+              </li>
+              <li>
+                <Link to="/sign">Sign up</Link>
+              </li> */}
+              <li>
+                <Link to="/profile">{user.login}</Link>
+              </li>
+              <li>
+                <Link to="/" onClick={this.signOut}> Sign out</Link>
+              </li>
+            </ul>
           </div>
-          <div className="menu-item">
-            <Link className="menu-item-link" to="/sign">Sign up</Link>
-          </div>
-          <div className="menu-item">
-            <Link className="menu-item-link" to="/profile">{user.login}</Link>
-          </div>
-          <div className="menu-item">
-            <Link className="menu-item-link" to="/">
-              <button onClick={this.signOut}> Sign out </button>
-            </Link>
-          </div>
-        </div>
+        </header>
         <div className="content">
           {this.props.children}
         </div>
+        <footer>
+          © 2018 Vadim Chernikov Software
+        </footer>
       </div>
     );
   }
 
   renderNotAuthorized() {
     return (
-      <div className="App">
-        <div className="menu-bar">
-          <div className="menu-item">
-            <Link className="menu-item-link" to="/auth">Autorization</Link>
+      <div className="main">
+        <header>
+          <div className="navigation">
+            <ul>
+              <li>
+                <Link to="/auth">Autorization</Link>
+              </li>
+              <li>
+                <Link to="/sign">Sign up</Link>
+              </li>
+              {/* <li>
+                <Link className="profile" to="/profile">Profile</Link>
+              </li> */}
+            </ul>
           </div>
-          <div className="menu-item">
-            <Link className="menu-item-link" to="/sign">Sign up</Link>
-          </div>
-          <div className="menu-item">
-            <Link className="menu-item-link" to="/profile">Profile</Link>
-          </div>
-        </div>
+        </header>
         <div className="content">
           {this.props.children}
         </div>
+        <footer>
+          © 2018 Vadim Chernikov Software
+        </footer>
       </div>
     );
   }

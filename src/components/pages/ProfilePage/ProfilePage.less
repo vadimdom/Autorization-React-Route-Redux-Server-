@@ -2,27 +2,47 @@
 
 .ProfilePage {
     color: @text-color;
-    padding: 16px;
+    padding: 50px 0;
+    text-align: center;
     box-sizing: border-box;
 
     .title {
-        color: @accent-color;
+        line-height: 30px;
+        padding: 0 15px;
+        background: #34302D;
+        color: #f1f1f1;
+        display: inline-block;
+    }
+
+    .title-little {
+        line-height: 21px;
+        padding: 0 15px;
+        background: #34302D;
+        color: #f1f1f1;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .container {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        text-align: center;
     }
 
     .field{
-        margin-bottom: 10px;
-        margin-top: 5px;
+        border: none;
+        padding: 0;
+        line-height: 21px;
     }
 
-    p{
-        color: #14083F;
-        font-weight: bold;
-        padding: 0;
-        margin: 0;
-    }
     button{
-        margin-left: 10px;
-        color: #095C5F;
-        background-color: #6DA86D;
+        color: #f1f1f1;
+        background-color: #34302D;
+        height: 21px;
+        border: none;
+    }
+
+    button:hover {
+        background-color: rgb(84, 136, 114);
     }
 }

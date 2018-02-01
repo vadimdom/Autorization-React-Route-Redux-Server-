@@ -2,49 +2,68 @@
 
 // global styles
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+    min-width: 400px;
+    background-color: #34302d;
+    border-top: 4px solid #3F9C3F;
+    margin: 0px;
 }
 
-// app styles
-.App {
-    background-color: @card-background-color;
-    width: 100vw;
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
 
-    .menu-bar {
-        display: flex;
-        background-color: @primary-color;
-        height: 50px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        box-sizing: border-box;
-    }
+.main {
+    height: 510px;
 
-    .menu-item {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .menu-item-link {
-        font-size: 17px;
-        font-weight: bold;
-        color: @contrast-text-color;
-        text-transform: uppercase;
-        text-decoration: none;
+    header {
+        min-height: 69px;
+    
+        .navigation {
+            float: right;
+            background-color: #34302d;
+            height: 69px;
+    
+            ul {
+                margin-top: 0;
+                // margin-bottom: 10px;
+                height: 69px;
+    
+                li {
+                    display: inline-block;
+                    height: 69px;
+                    // margin-top: -1px;
+    
+                    a {
+                        display: block;
+                        height: 34px;
+                        padding: 10px 15px;
+                        padding-top: 25px;
+                        color: white;
+                        text-decoration: none;
+                    }
+    
+                    a.profile {
+                        margin-right: 104px;
+                    }
+    
+                    a:hover {
+                        background-color: #3F9C3F;
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+    
+        }
     }
 
     .content {
         height: 100%;
+        background-image: url("../../../img/back.jpg");
+        background-size: cover;
     }
 
-    button{
-        margin-left: 10px;
-        color: #095C5F;
-        background-color: #6DA86D;
+    footer{
+        color: #eee;
+        padding: 30px 0;
+        padding-left: 30px;
     }
 }
+

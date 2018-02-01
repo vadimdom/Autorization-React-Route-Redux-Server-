@@ -58,7 +58,7 @@ class AuthorizationPage extends React.Component {
         <div>
           <input type="password" placeholder="Password..." className="field" onChange={this.passwordChange} />
         </div>
-        <Link to="/auth">
+        <Link to="/profile">
           <button onClick={this.autorize}> Authorize </button>
         </Link>
       </div>

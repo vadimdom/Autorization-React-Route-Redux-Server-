@@ -111,37 +111,45 @@ class ProfilePage extends React.Component {
           Here you can change your data!
         </h2>
         <div>
-          <p> Your name: {user.name}</p>
+          <h3 className="title-little"> Your name: {user.name}</h3>
+          <div className="container">
           <input type="text" placeholder="New name..." className="field" value={this.state.newname} onChange={this.newNameChange} />
           <Link to="/profile">
             <button onClick={this.changeName}> Change </button>
           </Link>
+          </div>
         </div>
         <div>
-          <p> Your second name: {user.secondName}</p>
-          <input type="text" placeholder="New second Name..." className="field" value={this.state.newsecondName} onChange={this.newSecondNameChange} />
+          <h3 className="title-little"> Your second name: {user.secondName}</h3>
+          <div className="container">
+            <input type="text" placeholder="New second Name..." className="field" value={this.state.newsecondName} onChange={this.newSecondNameChange} />
           <Link to="/profile">
             <button onClick={this.changeSecondName}> Change </button>
           </Link>
+          </div>
         </div>
         <div>
-          <p> Your Email: {user.Email}</p>
-          <input type="text" placeholder="New Email..." className="field" value={this.state.newEmail} onChange={this.newEmailChange} />
+          <h3 className="title-little"> Your Email: {user.Email}</h3>
+          <div className="container">
+            <input type="text" placeholder="New Email..." className="field" value={this.state.newEmail} onChange={this.newEmailChange} />
           <Link to="/profile">
             <button onClick={this.changeEmail}> Change </button>
           </Link>
+          </div>
         </div>
         <div>
-          <p> Your login: {user.login}</p>
-          <input type="text" placeholder="New login..." className="field" value={this.state.newlogin} onChange={this.newLoginChange} />
+          <h3 className="title-little"> Your login: {user.login}</h3>
+          <div className="container">
+            <input type="text" placeholder="New login..." className="field" value={this.state.newlogin} onChange={this.newLoginChange} />
           <Link to="/profile">
             <button onClick={this.changeLogin}> Change </button>
           </Link>
+          </div>
         </div>
-        <div>
+        <div className="container">
           <input type="password" placeholder="New password..." className="pass-field" value={this.state.newpassword} onChange={this.newPasswordChange} />
           <Link to="/profile">
-            <button onClick={this.changePassword}> Change password </button>
+            <button onClick={this.changePassword}> Change </button>
           </Link>
         </div>
       </div>

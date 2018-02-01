@@ -12,15 +12,15 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
     publicPath: '',
     filename: 'bundle.js',
   },
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /.jsx?$/,
-  //       use: 'eslint-loader',
-  //       exclude: /node_modules/,
-  //     },
-  //   ],
-  // },
+  module: {
+    rules: [
+      {
+        test: /.jsx?$/,
+        use: 'eslint-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
