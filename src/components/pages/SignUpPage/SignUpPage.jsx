@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import store from '../../../Redux/store.js';
-import {getState} from 'redux';
+// import {getState} from 'redux';
 
 import './SignUpPage.less';
 

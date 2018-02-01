@@ -1,5 +1,5 @@
 import * as types from '../../constants/ActionTypes';
-import assign from 'lodash';
+// import assign from 'lodash';
 
 const initialState = {
   users: [1],

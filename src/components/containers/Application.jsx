@@ -8,10 +8,10 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../../Redux/modules/action.js';
 
-@connect(state => ({
-  users: state.users
-  })
-)
+@connect(state => (
+  {
+    users: state.users,
+  }))
 
 class Application extends Component {
   render() {
@@ -22,15 +22,7 @@ class Application extends Component {
         <App signOutUser={actions.signOutUser}>
           <Route path="/auth" render={() => <AuthorizationPage authUser={actions.authUser} />} />
           <Route path="/sign" render={() => <SignUpPage signUser={actions.signUser} />} />
-          <Route path="/profile" render={() =>
-            <ProfilePage 
-              changeUserName={actions.changeUserName}
-              changeUserSecondName={actions.changeUserSecondName}
-              changeUserEmail={actions.changeUserEmail}
-              changeUserLogin={actions.changeUserLogin}
-              changeUserPassword={actions.changeUserPassword}
-            />} 
-          />
+          <Route path="/profile" render={() => <ProfilePage changeUserName={actions.changeUserName} changeUserSecondName={actions.changeUserSecondName} changeUserEmail={actions.changeUserEmail} changeUserLogin={actions.changeUserLogin} changeUserPassword={actions.changeUserPassword} />} />
         </App>
       </BrowserRouter>
     );
