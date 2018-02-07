@@ -20,9 +20,25 @@ class Application extends Component {
     return (
       <BrowserRouter>
         <App signOutUser={actions.signOutUser}>
-          <Route path="/auth" render={() => <AuthorizationPage authUser={actions.authUser} />} />
-          <Route path="/sign" render={() => <SignUpPage signUser={actions.signUser} />} />
-          <Route path="/profile" render={() => <ProfilePage changeUserName={actions.changeUserName} changeUserSecondName={actions.changeUserSecondName} changeUserEmail={actions.changeUserEmail} changeUserLogin={actions.changeUserLogin} changeUserPassword={actions.changeUserPassword} />} />
+          <Route
+            path="/auth"
+            render={() => <AuthorizationPage authUser={actions.authUser} />}
+          />
+          <Route
+            path="/sign"
+            render={() => <SignUpPage signUser={actions.signUser} />}
+          />
+          <Route
+            path="/profile"
+            render={() =>
+            (<ProfilePage
+              changeUserName={actions.changeUserName}
+              changeUserSecondName={actions.changeUserSecondName}
+              changeUserEmail={actions.changeUserEmail}
+              changeUserLogin={actions.changeUserLogin}
+              changeUserPassword={actions.changeUserPassword}
+            />)}
+          />
         </App>
       </BrowserRouter>
     );

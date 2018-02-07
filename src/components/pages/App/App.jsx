@@ -6,19 +6,12 @@ import store from '../../../Redux/store.js';
 import './App.less';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.signOut = this.signOut.bind(this);
-    this.renderAuthorized = this.renderAuthorized.bind(this);
-    this.renderNotAuthorized = this.renderNotAuthorized.bind(this);
-  }
-
-  signOut(event) {
+  signOut = (event) => {
     this.props.signOutUser();
     // console.log(store.getState());
   }
 
-  renderAuthorized(user) {
+  renderAuthorized = (user) => {
     return (
       <div className="main">
         <header>
@@ -49,7 +42,7 @@ class App extends React.Component {
     );
   }
 
-  renderNotAuthorized() {
+  renderNotAuthorized = () => {
     return (
       <div className="main">
         <header>

@@ -12,31 +12,26 @@ class AuthorizationPage extends React.Component {
       login: '',
       password: '',
     };
-    this.loginChange = this.loginChange.bind(this);
-    this.passwordChange = this.passwordChange.bind(this);
-    this.autorize = this.autorize.bind(this);
-    this.renderAuthorized = this.renderAuthorized.bind(this);
-    this.renderNotAuthorized = this.renderNotAuthorized.bind(this);
   }
 
-  loginChange(event) {
+  loginChange = (event) => {
     this.setState({
       login: event.target.value,
     });
   }
 
-  passwordChange(event) {
+  passwordChange = (event) => {
     this.setState({
       password: event.target.value,
     });
   }
 
-  autorize(event) {
+  autorize = (event) => {
     this.props.authUser(this.state.login, this.state.password);
     // console.log(store.getState());
   }
 
-  renderAuthorized() {
+  renderAuthorized = () => {
     return (
       <div className="AutorizationPage">
         <h2 className="title">
@@ -46,7 +41,7 @@ class AuthorizationPage extends React.Component {
     );
   }
 
-  renderNotAuthorized() {
+  renderNotAuthorized = () => {
     return (
       <div className="AutorizationPage">
         <h2 className="title">
@@ -58,7 +53,7 @@ class AuthorizationPage extends React.Component {
         <div>
           <input type="password" placeholder="Password..." className="field" onChange={this.passwordChange} />
         </div>
-        <Link to="/profile">
+        <Link to="/">
           <button onClick={this.autorize}> Authorize </button>
         </Link>
       </div>
@@ -70,9 +65,9 @@ class AuthorizationPage extends React.Component {
     const user = currentState.reducer.usersById[currentState.reducer.activeUser];
     if (user) {
       return this.renderAuthorized();
-    } else {
-      return this.renderNotAuthorized();
     }
+
+    return this.renderNotAuthorized();
   }
 }
 

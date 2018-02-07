@@ -5,6 +5,21 @@ import store from '../../../Redux/store.js';
 
 import './SignUpPage.less';
 
+const RenderInputField = (props) => {
+  const {placeholderProp, inputPropOnChange} = props;
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder={placeholderProp}
+        className="field"
+        onChange={inputPropOnChange}
+      />
+    </div>
+  );
+};
+
 class SignUpPage extends Component {
   constructor(props) {
     super(props);
@@ -15,47 +30,39 @@ class SignUpPage extends Component {
       email: '',
       secondName: '',
     };
-    this.loginChange = this.loginChange.bind(this);
-    this.passwordChange = this.passwordChange.bind(this);
-    this.nameChange = this.nameChange.bind(this);
-    this.emailChange = this.emailChange.bind(this);
-    this.secondNameChange = this.secondNameChange.bind(this);
-    this.pushUser = this.pushUser.bind(this);
-    this.renderAuthorized = this.renderAuthorized.bind(this);
-    this.renderNotAuthorized = this.renderNotAuthorized.bind(this);
   }
 
-  loginChange(event) {
+  loginChange = (event) => {
     this.setState({
       login: event.target.value,
     });
   }
 
-  passwordChange(event) {
+  passwordChange = (event) => {
     this.setState({
       password: event.target.value,
     });
   }
 
-  nameChange(event) {
+  nameChange = (event) => {
     this.setState({
       name: event.target.value,
     });
   }
 
-  emailChange(event) {
+  emailChange = (event) => {
     this.setState({
       email: event.target.value,
     });
   }
 
-  secondNameChange(event) {
+  secondNameChange = (event) => {
     this.setState({
       secondName: event.target.value,
     });
   }
 
-  pushUser(event) {
+  pushUser = (event) => {
     this.props.signUser(this.state.login, this.state.name, this.state.secondName, this.state.email, this.state.password);
     this.setState({
       login: '',
@@ -67,7 +74,7 @@ class SignUpPage extends Component {
     // console.log(store.getState());
   }
 
-  renderAuthorized() {
+  renderAuthorized = () => {
     return (
       <div className="SignUpPage">
         <h2 className="title">
@@ -77,26 +84,35 @@ class SignUpPage extends Component {
     );
   }
 
-  renderNotAuthorized() {
+  renderNotAuthorized = () => {
     return (
       <div className="SignUpPage">
         <h2 className="title">
           Please enter your registration data:
         </h2>
+        <RenderInputField
+          placeholderProp="Name..."
+          inputPropOnChange={this.nameChange}
+        />
+        <RenderInputField
+          placeholderProp="Second Name..."
+          inputPropOnChange={this.secondNameChange}
+        />
+        <RenderInputField
+          placeholderProp="Email..."
+          inputPropOnChange={this.emailChange}
+        />
+        <RenderInputField
+          placeholderProp="Login..."
+          inputPropOnChange={this.loginChange}
+        />
         <div>
-          <input type="text" placeholder="Name..." className="field" onChange={this.nameChange} />
-        </div>
-        <div>
-          <input type="text" placeholder="Second Name..." className="field" onChange={this.secondNameChange} />
-        </div>
-        <div>
-          <input type="text" placeholder="Email..." className="field" onChange={this.emailChange} />
-        </div>
-        <div>
-          <input type="text" placeholder="Login..." className="field" onChange={this.loginChange} />
-        </div>
-        <div>
-          <input type="password" placeholder="Password..." className="field" onChange={this.passwordChange} />
+          <input
+            type="password"
+            placeholder="Password..."
+            className="field"
+            onChange={this.passwordChange}
+          />
         </div>
         <Link to="/auth">
           <button onClick={this.pushUser}> Sign Up </button>
